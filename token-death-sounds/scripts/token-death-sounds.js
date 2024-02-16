@@ -29,12 +29,11 @@ Hooks.on("ready", async function () {
     // Listener for tokens dropping to 0 hp
     Hooks.on("updateActor", async (actor, updateData, diff, id) => {
         try {
-            if ((typeof actor.system.attributes.hp.value != 'undefined') &&
-                (actor.system.attributes.hp.value < 1) && 
-                (typeof updateData.flags == 'undefined')
+            if ((typeof updateData.system.attributes.hp.value != 'undefined') &&
+                (updateData.system.attributes.hp.value < 1)
             ) {
 
-                console.log("Token DSFX  | Would play death sfx because actor.system.attributes.hp = " + actor.system.attributes.hp.value);
+                console.log("Token DSFX  | Would play death sfx because updateData.system.attributes.hp = " + updateData.system.attributes.hp.value);
 
                 // Get the Death playlist
                 const playlistId = await game.settings.get('token-death-sounds', 'playlist-id');
