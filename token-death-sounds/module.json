@@ -1,0 +1,16 @@
+{
+  "id": "token-death-sounds",
+  "title": "Token Death Sounds",
+  "description": "A simple module that plays a random sound from a specified playlist when an actor drops to 0 HP.",
+  "authors": [
+    {
+    "name": "Stigs"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "scripts": ["scripts/token-death-sounds.js"]
+}
